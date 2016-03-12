@@ -7118,7 +7118,7 @@ input.mdl-button[type="submit"] {
   -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
-  width: 300px;
+  width: 300px;/*changed by Shovon*/
   height: 100%;
   max-height: 100%;
   position: absolute;
@@ -7127,7 +7127,7 @@ input.mdl-button[type="submit"] {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   border-right: 1px solid rgb(224,224,224);
-  background:rgb(58,180,166);/*Color changed by Shovon*/
+  background:rgb(63,81,181);/*Color changed by Shovon*/
   -webkit-transform: translateX(-250px);
           transform: translateX(-250px);
   -webkit-transform-style: preserve-3d;

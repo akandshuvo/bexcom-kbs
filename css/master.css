@@ -1,12 +1,118 @@
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::FONTS::::::::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500);
 
-.demo-card-wide.mdl-card {
-    width: 512px;
+
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*::::::::::::::::::UNIVERSAL CSS:::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+.text-center{
+    text-align: center;
 }
-.demo-card-wide > .mdl-card__title {
-    color: #fff;
-    height: 176px;
-    background: url('../assets/demos/welcome_card.jpg') center / cover;
+
+
+
+
+/********************************************************************************/
+/*:::::::::::::::::MATERIAL DESIGN CUSTOMIZED:::::::::::::::::::::::::::::::::::*/
+/********************************************************************************/
+.mdl-layout__drawer{
+    width: 320px !important;
+    overflow-y: auto;
 }
-.demo-card-wide > .mdl-card__menu {
-    color: #fff;
+.mdl-layout__drawer::-webkit-scrollbar {
+    display: none;
+}
+.mdl-layout__drawer::-moz-scrollbar{
+    display: none;
+}
+/********************************************************************************/
+/*::::::::::::::::::::::MY STYLE:::::::::::::::::::::::::::::::::::*/
+/********************************************************************************/
+
+
+/********************************************************************************/
+/*:::::::::::::::::LOGIN FORM:::::::::::::::::::::::::::::::::::*/
+/********************************************************************************/
+.login{
+    font-family: 'Raleway',sans-serif;
+    width: 610px;
+    height: 250px;
+    margin-left: 27%;
+    margin-top: 30%;
+    padding: 25px;
+    display: block;
+    background:rgb(63,81,181);
+}
+ .login_upper{
+    width:450px;
+    height:300px ;
+    background:#ffffff ;
+    box-shadow: 1px 1px 30px #616161;
+    z-index: 9999;
+    margin-left: 10%;
+    margin-top:-150px;
+    padding-left: 75px;
+    padding-top: 30px;
+}
+.login_btn{
+    float: right;
+    padding-right: 70px;
+    padding-top: 15px;
+}
+.login_title{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    padding-left: 100px;
+    color: rgb(63,81,181);
+}
+.copyright{
+    font-family:'Raleway' sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 15px;
+    text-transform:capitalize;
+    display: block;
+}
+.developer{
+    font-family:'Raleway' sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    text-transform:capitalize;
+    display: block;
+}
+/********************************************************************************/
+/*:::::::::::::::::MENU:::::::::::::::::::::::::::::::::::*/
+/********************************************************************************/
+.menu{
+    width: 100%;
+    height: 39px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    display: block;
+    padding: 5px;
+    padding-left: 10px;
+    text-transform: capitalize;
+    border-bottom: 2px #ffffff;
+    margin-bottom: 3px;
+}
+.menu:hover{
+    background-color: #1A237E;
+}
+.menu .name{
+    display: flex;
+    float: left;
+    text-transform: capitalize;
+}
+
+.menu .button{
+    display: flex;
+    float: right;
 }

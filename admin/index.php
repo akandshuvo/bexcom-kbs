@@ -24,362 +24,430 @@
 </head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header  mdl-layout--fixed-drawer">
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title">Title</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation. We hide it in small screens. -->
-
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                </nav>
 
         </div>
     </header>
-    <main class="mdl-layout__content">
-        <div class="page-content">
-            <div class="mdl-grid">
-            <!--:::::::::::::::::::::NAVIGATION::::::::::::::::::::::::::::::::-->
-                <div class="mdl-cell mdl-cell--4-col">
-                    <div class="mdl-layout__drawer">
-                        <nav class="mdl-navigation">
-                            <div class="navigation">
-                                <div id='cssmenu'>
-                                    <ul>
-                                        <!--ABOUT DTH-->
-                                        <li class='has-sub'><a href='#'>ABOUT DTH</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>delete</a>
-                                                    <ul>
-                                                        <li><a href='#'>admin_ac_delete.php</a></li>
-                                                        <li><a href='#'>admin_camera_delete.php</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>update</a>
-                                                    <ul>
-                                                        <li><a href='#'>emulator.php</a></li>
-                                                        <li><a href='#'>emulator_update.php</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>vendor</a></li>
-                                                <li class='has-sub'><a href='#'>OTHERS</a>
-                                                    <ul>
-                                                        <li><a href='#'>admin_ac.php</a></li>
-                                                        <li><a href='#'>admin_camera.php</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--PACKAGES-->
-                                        <li class='has-sub'><a href='#'>PACKAGES</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--OFFER-->
-                                        <li class='has-sub'><a href='#'>OFFER</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--RETAILER  LOCATIONS-->
-                                        <li class='has-sub'><a href='#'>RETAILER LOCATIONS</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--AFTER SALE SERVICE LOCATIONS-->
-                                        <li class='has-sub'><a href='#'>AFTER SALES SERVICE LOCATION</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--INSTALLER ADDRESS-->
-                                        <li class='has-sub'><a href='#'>INSTALLER ADDRESS</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--DEALER-->
-                                        <li class='has-sub'><a href='#'>DEALER</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--PROGRAM GUIDE-->
-                                        <li class='has-sub'><a href='#'>PROGRAM GUIDE</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--SCRIPT-->
-                                        <li class='has-sub'><a href='#'>SCRIPT</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--RECHARGE GUIDELINE-->
-                                        <li class='has-sub'><a href='#'>RECHARGE GUIDELINE</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--TRAINING MATERIAL-->
-                                        <li class='has-sub'><a href='#'>TRAINING MATERIAL</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--QUALITY GUIDELINES & PARAMETERS-->
-                                        <li class='has-sub'><a href='#'>SCRIPT</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--CURRENT PROMOTION-->
-                                        <li class='has-sub'><a href='#'>CURRENT PROMOTION</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--VAS-->
-                                        <li class='has-sub'><a href='#'>VAS</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--UPDATE-->
-                                        <li class='has-sub'><a href='#'>UPDATE</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--PRESS RELEASE-->
-                                        <li class='has-sub'><a href='#'>PRESS RELEASE</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--SOCIAL MEDIA-->
-                                        <li class='has-sub'><a href='#'>SOCIAL MEDIA</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--FAQ-->
-                                        <li class='has-sub'><a href='#'>FAQ</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--INSTALLATION GUIDE-->
-                                        <li class='has-sub'><a href='#'>INSTALLATION GUIDE</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--TECHNICAL HELP-->
-                                        <li class='has-sub'><a href='#'>TECHNICAL HELP</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--CONTACT DETAILS-->
-                                        <li class='has-sub'><a href='#'>CONTACT DETAILS</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <!--ARCHIVE-->
-                                        <li class='has-sub'><a href='#'>ARCHIVE</a>
-                                            <ul>
-                                                <li class='has-sub'><a href='#'>Product 1</a>
-                                                </li>
-                                                <li class='has-sub'><a href='#'>Product 2</a>
-                                                    <ul>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                        <li><a href='#'>Sub Product</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            <!--:::::::::::::::::::::NAVIGATION::::::::::::::::::::::::::::::::-->
-                <div class="mdl-cell mdl-cell--4-col">
-                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">Welcome</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Mauris sagittis pellentesque lacus eleifend lacinia...
-                        </div>
-                        <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                Get Started
-                            </a>
-                        </div>
-                        <div class="mdl-card__menu">
-                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                <i class="material-icons">share</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="mdl-cell mdl-cell--4-col"></div>
-            </div>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Beximco Communication</span>
+        <!-- Left aligned menu below button -->
 
+            <nav class="mdl-navigation">
+
+                <div class="menu">
+                    <div class="name">About DTH</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="1"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="1">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <div class="name">Packages</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="2"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="2">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <div class="name">offer</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="3"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="3">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu">
+                    <div class="name">retailer location</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="4"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="4">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">after sales service location</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="5"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="5">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">installer address</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="6"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="6">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">dealer</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="7"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="7">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">program guide</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="8"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="8">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">script</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="9"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="9">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">Recharge Guideline</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="10"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="10">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">Training Materials</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="11"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="11">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">Quality guidelines & parameters</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="12"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="12">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">Current Promotion</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="13"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="13">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">VAS</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="14"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="14">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">Update</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="15"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="15">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">press release</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="16"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="16">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">social media</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="17"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="17">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">FAQ</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="17"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="17">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">installation guide</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="18"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="18">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">technical help</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="19"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="19">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">contact details</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="20"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="20">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="name">press release</div>
+                    <div class="button">
+                        <!-- Right aligned menu below button -->
+                        <button id="21"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="21">
+                            <li class="mdl-menu__item">Some Action</li>
+                            <li class="mdl-menu__item">Another Action</li>
+                            <li disabled class="mdl-menu__item">Disabled Action</li>
+                            <li class="mdl-menu__item">Yet Another Action</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content"><!-- Your content goes here -->
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
+                    content goes here
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">goes</div>
+                <div class="mdl-cell mdl-cell--4-col">here</div>
+            </div>
         </div>
     </main>
 </div>

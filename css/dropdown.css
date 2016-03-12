@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 #cssmenu {
-  width: 300px;
+  width: 320px;
   font-family: Raleway, sans-serif;
   color: #ffffff;
 }
@@ -35,7 +35,7 @@
   font-size: 16px;
   text-decoration: none;
   color: #ffffff;
-  background: #3ab4a6;
+  background:rgb(63,81,181);
   -webkit-transition: color .2s ease;
   -o-transition: color .2s ease;
   transition: color .2s ease;
@@ -89,7 +89,7 @@
   font-size: 14px;
   text-decoration: none;
   color: #dddddd;
-  background: #49505a;
+  background:#1A237E;
   -webkit-transition: color .2s ease;
   -o-transition: color .2s ease;
   transition: color .2s ease;
