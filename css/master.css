@@ -12,14 +12,21 @@
     text-align: center;
 }
 
-
+.menu_list a{
+    text-decoration:none !important;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 18px !important;
+}
+.menu_list a:hover{
+    text-decoration:none  !important;
+}
 
 
 /********************************************************************************/
 /*:::::::::::::::::MATERIAL DESIGN CUSTOMIZED:::::::::::::::::::::::::::::::::::*/
 /********************************************************************************/
 .mdl-layout__drawer{
-    width: 320px !important;
     overflow-y: auto;
 }
 .mdl-layout__drawer::-webkit-scrollbar {
@@ -41,7 +48,7 @@
     width: 610px;
     height: 250px;
     margin-left: 27%;
-    margin-top: 30%;
+    margin-top: 23%;
     padding: 25px;
     display: block;
     background:rgb(63,81,181);
@@ -68,6 +75,7 @@
     font-size: 35px;
     padding-left: 100px;
     color: rgb(63,81,181);
+    margin-bottom: 10px;
 }
 .copyright{
     font-family:'Raleway' sans-serif;
@@ -115,4 +123,11 @@
 .menu .button{
     display: flex;
     float: right;
+}
+
+.logout{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 3px;
 }

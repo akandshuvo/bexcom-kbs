@@ -31,24 +31,24 @@
 </head>
 <body>
 
-    <form action="#">
+    <form action="scripts/checklogin.php" method="post">
         <div class="login">
             <div class="login_upper">
                 <span class="mdl-layout-title login_title">LOGIN</span>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="agent_id">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" name="user_id" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="agent_id">
                     <label class="mdl-textfield__label" for="agent_id">Your ID</label>
                     <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
                 <br>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="password" id="sample3">
-                    <label class="mdl-textfield__label" for="sample3">Password</label>
+                    <input class="mdl-textfield__input" type="password" name="password" id="password">
+                    <label class="mdl-textfield__label" for="password">Password</label>
                 </div>
                 <br>
                 <!-- Colored raised button -->
                 <div class="login_btn">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                         LOGIN
                     </button>
                 </div>
@@ -60,9 +60,9 @@
     <div class="copyright">
         &copy;&nbsp;Digicon Technologies Ltd,&nbsp;2016
     </div>
-    <!--<div class="developer">
+    <div class="developer">
         developed by:&nbsp;shovon rahman shuvo
-    </div>>-->
+    </div>>
 
 </body>
 </html>

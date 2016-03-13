@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['admin_id'])){
-        header('location:../index.php');
-    }
+session_start();
+if(!isset($_SESSION['agent_id'])){
+    header('location:../index.php');
+}
 ?>
 
 <!doctype html>
@@ -28,6 +28,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="../scripts/dropdown.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.js"></script>
+
 </head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
@@ -40,33 +41,33 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <div class="name"><?php echo $_SESSION['admin_name'] ?></div>
-                    &nbsp;&nbsp;&nbsp;
-                    <div class="button">
-                        <!-- Right aligned menu below button -->
-                        <button id="setting"
+                <div class="name"><?php echo $_SESSION['agent_name'] ?></div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="button">
+                    <!-- Right aligned menu below button -->
+                    <button id="setting"
                             class="mdl-button mdl-js-button mdl-button--icon">
-                            <i class="material-icons">&#xE8EE;</i>
-                        </button>
+                        <i class="material-icons">&#xE8EE;</i>
+                    </button>
 
-                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                            for="setting">
-                            <li class="mdl-menu__item">
-                                <a href="../scripts/logout.php">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                                        <i class="material-icons">&#xE8AC;</i>&nbsp;&nbsp;&nbsp;LOG OUT
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                        for="setting">
+                        <li class="mdl-menu__item">
+                            <a href="../scripts/logout.php">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                    <i class="material-icons">&#xE8AC;</i>&nbsp;&nbsp;&nbsp;LOG OUT
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-<!--:::::::::::::::::::::::::::::::::::ABOUT DTH:::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
             <div class="menu">
                 <div class="name">About DTH</div>
                 <div class="button">
@@ -78,14 +79,13 @@
 
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                         for="1">
-                        <li class="mdl-menu__item menu_list"><a href="">Product</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Services</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Offers</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Why Real VU</a></li>
+                        <li class="mdl-menu__item">Some Action</li>
+                        <li class="mdl-menu__item">Another Action</li>
+                        <li class="mdl-menu__item">Yet Another Action</li>
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
             <div class="menu">
                 <div class="name">Packages</div>
                 <div class="button">
@@ -97,14 +97,14 @@
 
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                         for="2">
-                        <li class="mdl-menu__item menu_list"><a href="">Pack 1&2</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Price</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Channel</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Add-ons</a></li>
+                        <li class="mdl-menu__item">Some Action</li>
+                        <li class="mdl-menu__item">Another Action</li>
+                        <li disabled class="mdl-menu__item">Disabled Action</li>
+                        <li class="mdl-menu__item">Yet Another Action</li>
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
             <div class="menu">
                 <div class="name">offer</div>
                 <div class="button">
@@ -116,12 +116,14 @@
 
                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                         for="3">
-                        <li class="mdl-menu__item menu_list"><a href="">New Customer</a></li>
-                        <li class="mdl-menu__item menu_list"><a href="">Old Customer</a></li>
+                        <li class="mdl-menu__item">Some Action</li>
+                        <li class="mdl-menu__item">Another Action</li>
+                        <li disabled class="mdl-menu__item">Disabled Action</li>
+                        <li class="mdl-menu__item">Yet Another Action</li>
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
             <div class="menu">
                 <div class="name">retailer location</div>
                 <div class="button">
@@ -140,7 +142,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">after sales service location</div>
                 <div class="button">
@@ -159,7 +160,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">installer address</div>
                 <div class="button">
@@ -178,7 +178,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">dealer</div>
                 <div class="button">
@@ -197,7 +196,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">program guide</div>
                 <div class="button">
@@ -216,7 +214,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">script</div>
                 <div class="button">
@@ -235,7 +232,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">Recharge Guideline</div>
                 <div class="button">
@@ -254,7 +250,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">Training Materials</div>
                 <div class="button">
@@ -273,7 +268,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">Quality guidelines & parameters</div>
                 <div class="button">
@@ -292,7 +286,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">Current Promotion</div>
                 <div class="button">
@@ -311,7 +304,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">VAS</div>
                 <div class="button">
@@ -330,7 +322,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">Update</div>
                 <div class="button">
@@ -349,7 +340,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">press release</div>
                 <div class="button">
@@ -368,7 +358,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">social media</div>
                 <div class="button">
@@ -387,7 +376,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">FAQ</div>
                 <div class="button">
@@ -406,7 +394,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">installation guide</div>
                 <div class="button">
@@ -425,7 +412,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">technical help</div>
                 <div class="button">
@@ -444,7 +430,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">contact details</div>
                 <div class="button">
@@ -463,7 +448,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
                 <div class="name">press release</div>
                 <div class="button">
@@ -482,7 +466,6 @@
                     </ul>
                 </div>
             </div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -503,15 +486,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric"></td>
-                                <td>25</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                            </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric"></td>
+                            <td>25</td>
+                            <td>$2.90</td>
+                            <td>$2.90</td>
+                            <td>$2.90</td>
+                            <td>$2.90</td>
+                            <td>$2.90</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>

@@ -533,7 +533,7 @@ textarea {
     box-shadow: none !important; }
   a,
   a:visited {
-    text-decoration: underline; }
+    text-decoration:none; }
   a[href]:after {
     content: " (" attr(href) ")"; }
   abbr[title]:after {
@@ -7118,7 +7118,7 @@ input.mdl-button[type="submit"] {
   -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
-  width: 300px;/*changed by Shovon*/
+  width: 350px;/*changed by Shovon*/
   height: 100%;
   max-height: 100%;
   position: absolute;
@@ -7128,8 +7128,8 @@ input.mdl-button[type="submit"] {
   box-sizing: border-box;
   border-right: 1px solid rgb(224,224,224);
   background:rgb(63,81,181);/*Color changed by Shovon*/
-  -webkit-transform: translateX(-250px);
-          transform: translateX(-250px);
+  -webkit-transform: translateX(-350px);
+          transform: translateX(-350px);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   will-change: transform;
