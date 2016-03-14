@@ -11,23 +11,19 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello</title>
-    <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--:::::::::::::STYLE SHEET::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <title>BexCom</title>
+<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+<!--:::::::::::::STYLE SHEET::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../vendor/mdl/material.css">
-    <!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">-->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.css'>
+<!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">-->
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/dropdown.css">
-    <!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
+<!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
-    <!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
-    <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-    <!--:::::::::::::SCRIPTS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-    <script defer src="../vendor/mdl/material.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="../scripts/dropdown.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.js"></script>
+<!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
+<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 </head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
@@ -35,7 +31,7 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Title</span>
+            <span class="mdl-layout-title">Beximco Communication</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -64,7 +60,7 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">Beximco Communication</span>
         <nav class="mdl-navigation">
 <!--:::::::::::::::::::::::::::::::::::ABOUT DTH:::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
             <div class="menu">
@@ -488,37 +484,63 @@
     <main class="mdl-layout__content">
         <div class="page-content">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col"></div>
-                <div class="mdl-cell mdl-cell--8-col">
+                <div class="mdl-cell mdl-cell--12-col">
                     <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
                         <thead>
                         <tr>
-                            <th class="mdl-data-table__cell--non-numeric">Division</th>
-                            <th>District</th>
-                            <th>Upazilla</th>
-                            <th>Thana</th>
-                            <th>Post Code</th>
-                            <th>Area</th>
-                            <th>Village</th>
+                            <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
+                            <th style="text-align: center">District</th>
+                            <th style="text-align: center">Upazilla</th>
+                            <th style="text-align: center">Thana</th>
+                            <th style="text-align: center">Post Code</th>
+                            <th style="text-align: center">Area</th>
+                            <th style="text-align: center">Village</th>
+                            <th style="text-align: center">Edit</th>
+                            <th style="text-align: center">Update</th>
+                            <th style="text-align: center">Delete</th>
                         </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="mdl-data-table__cell--non-numeric"></td>
-                                <td>25</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
-                                <td>$2.90</td>
+                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>Samsung Galaxy S7</td>
+                                <td>
+                                    <!-- Colored mini FAB button -->
+                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
+                                        <i class="material-icons">&#xE150;</i>
+                                    </button>
+
+                                </td>
+                                <td>
+                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
+                                        <i class="material-icons">&#xE872;</i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="mdl-cell mdl-cell--1-col"></div>
             </div>
         </div>
     </main>
 </div>
+
+
+<!--:::::::::::::SCRIPTS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="../scripts/dropdown.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js'></script>
+<script src="../vendor/mdl/material.js"></script>
+
+
+
 </body>
 <html>
