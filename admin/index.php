@@ -485,7 +485,7 @@
         <div class="page-content">
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col">
-                    <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+                    <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
                         <thead>
                         <tr>
                             <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
@@ -493,9 +493,8 @@
                             <th style="text-align: center">Upazilla</th>
                             <th style="text-align: center">Thana</th>
                             <th style="text-align: center">Post Code</th>
-                            <th style="text-align: center">Area</th>
+                            <th style="text-align: center ">Area</th>
                             <th style="text-align: center">Village</th>
-                            <th style="text-align: center">Edit</th>
                             <th style="text-align: center">Update</th>
                             <th style="text-align: center">Delete</th>
                         </tr>
@@ -508,8 +507,9 @@
                                 <td>Samsung Galaxy S7</td>
                                 <td>Samsung Galaxy S7</td>
                                 <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
+                                <td class="mdl-data-table__cell--non-numeric" >
+                                    Samsung Galaxy S7
+                                </td>
                                 <td>
                                     <!-- Colored mini FAB button -->
                                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
