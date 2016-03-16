@@ -176,7 +176,18 @@
     float: left;
     text-transform: capitalize;
 }
-
+.menu .name a{
+    text-decoration: none;
+    text-underline: none;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+.menu .name a:hover{
+    text-decoration: none;
+    text-underline: none;
+    color: #ffffff;
+}
 .menu .button{
     display: flex;
     float: right;

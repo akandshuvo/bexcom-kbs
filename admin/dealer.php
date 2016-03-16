@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['admin_id'])){
-        header('location:../index.php');
-    }
+session_start();
+if(!isset($_SESSION['admin_id'])){
+    header('location:../index.php');
+}
 ?>
 
 <!doctype html>
@@ -12,18 +12,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BexCom</title>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-<!--:::::::::::::STYLE SHEET::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--:::::::::::::STYLE SHEET::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../vendor/mdl/material.css">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.css'>
-<!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">-->
+    <!--<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">-->
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/dropdown.css">
-<!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
+    <!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css">
-<!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--:::::::::::::BOOTSTRAP::::::::::::::::::::-->
+    <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 </head>
 <body>
 <!-- Always shows a header, even in smaller screens. -->
@@ -33,15 +33,14 @@
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Title</span>
+            <span class="mdl-layout-title">DEALER</span>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
-            <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>
-            <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>
-            <a href="#fixed-tab-4" class="mdl-layout__tab">Tab 4</a>
-            <a href="#fixed-tab-5" class="mdl-layout__tab">Tab 5</a>
+            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">PRODUCT</a>
+            <a href="#fixed-tab-2" class="mdl-layout__tab">SERVICES</a>
+            <a href="#fixed-tab-3" class="mdl-layout__tab">OFFERS</a>
+            <a href="#fixed-tab-4" class="mdl-layout__tab">WHY REAL vu</a>
         </div>
     </header>
     <div class="mdl-layout__drawer">
@@ -51,7 +50,7 @@
         <!-- Navigation -->
         <nav class="mdl-navigation">
             <?php
-                include 'navigation.php';
+            include 'navigation.php';
             ?>
         </nav>
     </div>
@@ -202,53 +201,6 @@
             </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-5">
             <div class="page-content">
                 <!-- Your content goes here -->
                 <div class="mdl-grid">
