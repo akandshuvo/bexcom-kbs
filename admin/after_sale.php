@@ -77,7 +77,7 @@ if(!isset($_SESSION['admin_id'])){
                                     <td>Samsung Galaxy S7</td>
                                     <td>Samsung Galaxy S7</td>
                                     <td>Samsung Galaxy S7</td>
-                                    <td>Samsung Galaxy S7 Samsung Galaxy S7
+                                    <td>Samsung Galaxy S7 Samsun,g Galaxy S7
                                         Samsung Galaxy S7Samsung Galaxy S7
                                     </td>
                                     <td>Samsung Galaxy S7 </td>
