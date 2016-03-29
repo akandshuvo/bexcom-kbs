@@ -34,6 +34,23 @@ if(!isset($_SESSION['admin_id'])){
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">ABOUT DTH</span>
+            <div class="mdl-layout-spacer"></div>
+            <!--USER NAME AFTER LOGIN-->
+            <span class="">AFTER SALES SERVICE LOCATION</span>
+            <span><!-- Right aligned menu below button -->
+                <button id="demo-menu-lower-right"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </span>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -44,7 +61,7 @@ if(!isset($_SESSION['admin_id'])){
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">BexCOM</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation -->

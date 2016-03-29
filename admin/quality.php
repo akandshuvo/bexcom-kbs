@@ -34,17 +34,36 @@ if(!isset($_SESSION['admin_id'])){
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">QUALITY GUIDELINES</span>
+            <!--USER NAME AFTER LOGIN-->
+            <span class="">AFTER SALES SERVICE LOCATION</span>
+            <span><!-- Right aligned menu below button -->
+                <button id="demo-menu-lower-right"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </span>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">PRODUCT</a>
-            <a href="#fixed-tab-2" class="mdl-layout__tab">SERVICES</a>
-            <a href="#fixed-tab-3" class="mdl-layout__tab">OFFERS</a>
-            <a href="#fixed-tab-4" class="mdl-layout__tab">WHY REAL vu</a>
+            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">inbound</a>
+            <a href="#fixed-tab-2" class="mdl-layout__tab">outbound</a>
+            <a href="#fixed-tab-3" class="mdl-layout__tab">sales</a>
+            <a href="#fixed-tab-4" class="mdl-layout__tab">promotions</a>
+            <a href="#fixed-tab-2" class="mdl-layout__tab">up sales</a>
+            <a href="#fixed-tab-3" class="mdl-layout__tab">cross sales</a>
+            <a href="#fixed-tab-4" class="mdl-layout__tab">social media</a>
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">BexCOM</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation -->
