@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "digicon@123";
+    $password = "";
     $dbname = "bexcom";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);

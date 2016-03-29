@@ -1,8 +1,8 @@
 <?php
-session_start();
-if(!isset($_SESSION['admin_id'])){
-    header('location:../index.php');
-}
+    session_start();
+    if(!isset($_SESSION['admin_id'])){
+        header('location:../index.php');
+    }
 ?>
 
 <!doctype html>
@@ -26,6 +26,14 @@ if(!isset($_SESSION['admin_id'])){
     <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 </head>
 <body>
+    <!--DATA IS PULLING FROM DATABASE-->
+<?php
+    include '../scripts/db.php';
+    $query = "SELECT id,division,district,upazilla,thana,post_code,area_village from installer_address";
+    $result = $conn->query($query);
+    //$conn->close();
+?>
+
 <!-- Always shows a header, even in smaller screens. -->
 <!-- Simple header with fixed tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
@@ -36,7 +44,7 @@ if(!isset($_SESSION['admin_id'])){
             <span class="mdl-layout-title">INSTALLER ADDRESS</span>
             <div class="mdl-layout-spacer"></div>
             <!--USER NAME AFTER LOGIN-->
-            <span class="">AFTER SALES SERVICE LOCATION</span>
+            <span class=""><?php echo $_SESSION['admin_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -45,19 +53,19 @@ if(!isset($_SESSION['admin_id'])){
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">Some Action</li>
-                    <li class="mdl-menu__item">Another Action</li>
-                    <li disabled class="mdl-menu__item">Disabled Action</li>
-                    <li class="mdl-menu__item">Yet Another Action</li>
+                    <li class="mdl-menu__item">
+                        <a href="../scripts/logout.php">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
+                                LOG OUT
+                            </button>
+                        </a>
+                    </li>
                 </ul>
             </span>
         </div>
         <!-- Tabs -->
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">PRODUCT</a>
-            <a href="#fixed-tab-2" class="mdl-layout__tab">SERVICES</a>
-            <a href="#fixed-tab-3" class="mdl-layout__tab">OFFERS</a>
-            <a href="#fixed-tab-4" class="mdl-layout__tab">WHY REAL vu</a>
+            <a href="#fixed-tab-1" class="mdl-layout__tab is-active">LOCATIONS</a>
         </div>
     </header>
     <div class="mdl-layout__drawer">
@@ -71,193 +79,63 @@ if(!isset($_SESSION['admin_id'])){
             ?>
         </nav>
     </div>
+    
     <main class="mdl-layout__content">
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
             <div class="page-content">
                 <!-- Your content goes here -->
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
+                        <table align="center" class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
                             <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
+                                <tr>
+                                    <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
+                                    <th style="text-align: center">District</th>
+                                    <th style="text-align: center">Upazilla</th>
+                                    <th style="text-align: center">Thana</th>
+                                    <th style="text-align: center">Post Code</th>
+                                    <th style="text-align: center ">Area</th>
+                                    <th style="text-align: center">Village</th>
+                                    <th style="text-align: center">Update</th>
+                                    <th style="text-align: center">Delete</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
-
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                        <i class="material-icons">&#xE872;</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
-
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                        <i class="material-icons">&#xE872;</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
-
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
+                            <?php
+                                while($row = $result->fetch_assoc()) {
+                                    $id = $row['id'];
+                                    $division = $row['division'];
+                                    $district = $row['district'];
+                                    $upazilla = $row['upazilla'];
+                                    $thana = $row['thana'];
+                                    $post_code = $row['post_code'];
+                                    $area_village = $row['area_village'];
+                                    ?>
+                                    <tr>
+                                        <td class="mdl-data-table__cell--non-numeric"><?php echo $division?></td>
+                                        <td><?php echo $district?></td>
+                                        <td><?php echo $upazilla?></td>
+                                        <td><?php echo $thana?></td>
+                                        <td><?php echo $post_code?></td>
+                                        <td><?php echo $area_village?></td>
+                                        <td class="mdl-data-table__cell--non-numeric"><?php echo $division?></td>
+                                        <td>
+                                            <!-- Colored mini FAB button -->
+                                            <button
+                                                class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
+                                                <i class="material-icons">&#xE150;</i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button
+                                                class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
+                                                <i class="material-icons">&#xE872;</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                            <?php
+                                }
+                            ?>
                             </tbody>
                         </table>
                     </div>

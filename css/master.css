@@ -210,3 +210,9 @@
     padding: 3px;
     background: #1a237e;
 }
+.floating_btn{
+    z-index: 9999;
+    margin-top: 35%;
+    margin-left: 93%;
+    position:fixed;
+}
