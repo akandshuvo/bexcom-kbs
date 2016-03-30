@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dd3407a-d845-4b93-941e-23f361548c24" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/after_sale.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/after_sale_insert.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/insert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/installer_address.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/installer_address_insert.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/navigation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/retailer_address.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/insert/retailer_address_insert.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/after_sale.php" afterPath="$PROJECT_DIR$/admin/after_sale.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/installer_address.php" afterPath="$PROJECT_DIR$/admin/installer_address.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/retailer.php" afterPath="$PROJECT_DIR$/admin/retailer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/master.css" afterPath="$PROJECT_DIR$/css/master.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/checklogin.php" afterPath="$PROJECT_DIR$/scripts/checklogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/db.php" afterPath="$PROJECT_DIR$/scripts/db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
     </list>
     <ignored path="bexcom-kbs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,22 +36,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="after_sale_insert.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/insert/after_sale_insert.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.615385">
-              <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
-              <folding>
-                <marker date="1459345006438" expanded="true" signature="488:1203" placeholder="INSERT INTO after_sale_service_location... " />
-                <marker date="1459345006438" expanded="true" signature="1261:1306" placeholder="..." />
-                <marker date="1459345006438" expanded="true" signature="1261:1362" placeholder="..." />
-                <marker date="1459345006438" expanded="true" signature="1261:1383" placeholder="..." />
-                <marker date="1459345006438" expanded="true" signature="1373:1383" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="installer_address.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/insert/installer_address.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,8 +59,8 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59891105">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.3212341">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -103,6 +71,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="23.923077">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="20" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/master.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.115385">
+              <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -278,6 +256,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bexcom-kbs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bexcom-kbs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -335,7 +327,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="703" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20424597" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -640,14 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/master.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="214" column="18" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/after_sale.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -774,10 +758,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/master.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.115385">
+          <caret line="116" column="4" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59891105">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.3212341">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding />
         </state>
       </provider>
