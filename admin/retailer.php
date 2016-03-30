@@ -26,6 +26,17 @@ if(!isset($_SESSION['admin_id'])){
     <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 </head>
 <body>
+<?php
+    include '../scripts/db.php';
+    $query = "SELECT id,division,district,upazilla,thana,post_code,area_village from retailer_location";
+    $result = $conn->query($query);
+    //$conn->close();
+?>
+
+
+
+
+
 <!-- Always shows a header, even in smaller screens. -->
 <!-- Simple header with fixed tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
@@ -35,7 +46,8 @@ if(!isset($_SESSION['admin_id'])){
             <!-- Title -->
             <span class="mdl-layout-title">RETAILER LOCATIONS</span>
             <!--USER NAME AFTER LOGIN-->
-            <span class="">AFTER SALES SERVICE LOCATION</span>
+            <div class="mdl-layout-spacer"></div>
+            <span class=""><?php echo $_SESSION['admin_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -63,17 +75,27 @@ if(!isset($_SESSION['admin_id'])){
         <!-- Navigation -->
         <nav class="mdl-navigation">
             <?php
-            include 'navigation.php';
+                include 'navigation.php';
             ?>
         </nav>
     </div>
     <main class="mdl-layout__content">
+        <!--FLOATIG BUTTON-->
+        <div class="floating_btn">
+            <!-- Colored FAB button with ripple -->
+            <a href="insert/retailer_address.php">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">add</i>
+                </button>
+            </a>
+        </div>
+        <!--FLOATIG BUTTON-->
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
             <div class="page-content">
                 <!-- Your content goes here -->
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
+                        <table align="center" class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
                             <thead>
                             <tr>
                                 <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
@@ -81,36 +103,45 @@ if(!isset($_SESSION['admin_id'])){
                                 <th style="text-align: center">Upazilla</th>
                                 <th style="text-align: center">Thana</th>
                                 <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
+                                <th style="text-align: center ">Area/Village</th>
                                 <th style="text-align: center">Update</th>
                                 <th style="text-align: center">Delete</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+                                <?php
+                                    while($row = $result->fetch_assoc()) {
+                                        $id = $row['id'];
+                                        $division = $row['division'];
+                                        $district = $row['district'];
+                                        $upazilla = $row['upazilla'];
+                                        $thana = $row['thana'];
+                                        $post_code = $row['post_code'];
+                                        $area_village = $row['area_village'];
+                                ?>
+                                    <tr>
+                                        <td class="mdl-data-table__cell--non-numeric"><?php echo $division ?></td>
+                                        <td><?php echo $district ?></td>
+                                        <td><?php echo $upazilla ?></td>
+                                        <td><?php echo $thana ?></td>
+                                        <td><?php echo $post_code ?></td>
+                                        <td><?php echo $area_village ?></td>
+                                        <td>
+                                            <!-- Colored mini FAB button -->
+                                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
+                                                <i class="material-icons">&#xE150;</i>
+                                            </button>
 
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                        <i class="material-icons">&#xE872;</i>
-                                    </button>
-                                </td>
-                            </tr>
+                                        </td>
+                                        <td>
+                                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
+                                                <i class="material-icons">&#xE872;</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>

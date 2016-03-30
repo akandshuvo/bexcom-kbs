@@ -91,9 +91,11 @@ if(!isset($_SESSION['admin_id'])){
         <!--FLOATIG BUTTON-->
             <div class="floating_btn">
                 <!-- Colored FAB button with ripple -->
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-                    <i class="material-icons">add</i>
-                </button>
+                <a href="insert/after_sale.php">
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">add</i>
+                    </button>
+                </a>
             </div>
         <!--FLOATIG BUTTON-->
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">

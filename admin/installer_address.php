@@ -81,6 +81,16 @@
     </div>
     
     <main class="mdl-layout__content">
+        <!--FLOATIG BUTTON-->
+        <div class="floating_btn">
+            <!-- Colored FAB button with ripple -->
+            <a href="insert/installer_address.php">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                    <i class="material-icons">add</i>
+                </button>
+            </a>
+        </div>
+        <!--FLOATIG BUTTON-->
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
             <div class="page-content">
                 <!-- Your content goes here -->
@@ -101,15 +111,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
-                                while($row = $result->fetch_assoc()) {
-                                    $id = $row['id'];
-                                    $division = $row['division'];
-                                    $district = $row['district'];
-                                    $upazilla = $row['upazilla'];
-                                    $thana = $row['thana'];
-                                    $post_code = $row['post_code'];
-                                    $area_village = $row['area_village'];
+                                     <?php
+                                        while($row = $result->fetch_assoc()) {
+                                            $id = $row['id'];
+                                            $division = $row['division'];
+                                            $district = $row['district'];
+                                            $upazilla = $row['upazilla'];
+                                            $thana = $row['thana'];
+                                            $post_code = $row['post_code'];
+                                            $area_village = $row['area_village'];
                                     ?>
                                     <tr>
                                         <td class="mdl-data-table__cell--non-numeric"><?php echo $division?></td>
