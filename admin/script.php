@@ -34,8 +34,9 @@ if(!isset($_SESSION['admin_id'])){
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">SCRIPTS</span>
-            <!--USER NAME AFTER LOGIN-->
-            <span class="">AFTER SALES SERVICE LOCATION</span>
+            <div class="mdl-layout-spacer"></div>
+<!--USER NAME AFTER LOGIN-->
+            <span class=""><?php echo $_SESSION['admin_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -44,10 +45,14 @@ if(!isset($_SESSION['admin_id'])){
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">Some Action</li>
-                    <li class="mdl-menu__item">Another Action</li>
-                    <li disabled class="mdl-menu__item">Disabled Action</li>
-                    <li class="mdl-menu__item">Yet Another Action</li>
+                    <li class="mdl-menu__item"><!-- Accent-colored raised button with ripple -->
+                        <a href="../scripts/logout.php">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
+                             LOG OUT
+                            </button>
+                        </a>
+                    </li>
+
                 </ul>
             </span>
         </div>

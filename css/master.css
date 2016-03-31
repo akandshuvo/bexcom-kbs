@@ -3,11 +3,18 @@
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 @import url(http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500);
 
-
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::UNIVERSAL CSS:::::::::::::::::::::::*/
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::*/
-
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Raleway',sans-serif;
+}
+.welcome{
+  font-family: 'Raleway',sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  margin-top: 7%;
+}
 .text-center{
     text-align: center;
 }
@@ -215,4 +222,39 @@
     margin-top: 28%;
     margin-left: 93%;
     position:fixed;
+}
+/********************************************************************************/
+/*:::::::::::::::::FREQUENTLY ASKED QUESTION::::::::::::::::::::::::::::::::::::::::::::::::*/
+/********************************************************************************/
+
+.faq{
+  width: 850px;
+  height: auto;
+  display: inline-block;
+  box-shadow: 1px 1px 30px #616161;
+  border-top: 10px solid #B71C1C;
+  margin-bottom: 15px;
+}
+
+.question{
+  font-family: 'Raleway',sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  width: 850px;
+  height: auto;
+  min-height:50px;
+  padding-left: 15px;
+  padding-top: 5px;
+  background:#E53935;
+  color: #ffffff;
+}
+.answer{
+  font-family: 'Raleway',sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  width: 850px;
+  height: auto;
+  min-height: 80px;
+  padding-left: 15px;
+  padding-top: 5px;
 }

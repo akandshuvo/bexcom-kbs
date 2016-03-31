@@ -43,7 +43,7 @@
             <!-- Title -->
             <span class="mdl-layout-title">INSTALLER ADDRESS</span>
             <div class="mdl-layout-spacer"></div>
-            <!--USER NAME AFTER LOGIN-->
+<!--USER NAME AFTER LOGIN-->
             <span class=""><?php echo $_SESSION['admin_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
@@ -53,13 +53,14 @@
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">
+                    <li class="mdl-menu__item"><!-- Accent-colored raised button with ripple -->
                         <a href="../scripts/logout.php">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-                                LOG OUT
+                             LOG OUT
                             </button>
                         </a>
                     </li>
+
                 </ul>
             </span>
         </div>
@@ -79,7 +80,7 @@
             ?>
         </nav>
     </div>
-    
+
     <main class="mdl-layout__content">
         <!--FLOATIG BUTTON-->
         <div class="floating_btn">
