@@ -81,7 +81,7 @@ if(!isset($_SESSION['admin_id'])){
                 <!-- Your content goes here -->
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--10-col">
-                        <table class="table table-bordered table-responsive myTable">
+                        <table align='center' class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
                             <thead>
                             <tr>
                                 <th>Filename</th>
@@ -162,13 +162,21 @@ if(!isset($_SESSION['admin_id'])){
                                     print("
                                    <tr class='$class'>
                                      <td>
-                                       <a href='../docs/dth/product/$namehref' target='_blank'>$name</a>
+                                       <p>$name</p>
                                      </td>
-                                     <td><a href='./$namehref'>$extn</a></td>
+                                     <td><p>$extn</p></td>
                                      <td>
                                        <a href='../docs/dth/product/$namehref' target='_blank'>
-                                        <button type='button'>Download</button>
+                                       <button class='mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary'>
+                                        <i class='material-icons'>&#xE884;</i>
+                                       </button>
                                        </a>
+                                       <a href='../docs/dth/product/$namehrefss' target='_blank'>
+                                       <button class='mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent'>
+                                        <i class='material-icons'>&#xE92B;</i>
+                                       </button>
+                                       </a>
+
                                      </td>
                                    </tr>");
                                 }

@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['admin_id'])){
     header('location:../index.php');
 }
-?>
+?>0
 
 <!doctype html>
 <html lang=''>
