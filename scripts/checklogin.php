@@ -4,7 +4,7 @@
 
     $host="localhost";
     $username="root";
-    $password="digicon@123";
+    $password="";
     $dbname="bexcom";
     $conn=mysql_connect($host,$username,$password);
     $selectdb=mysql_select_db($dbname,$conn);

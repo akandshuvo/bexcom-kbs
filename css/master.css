@@ -6,6 +6,9 @@
 /*::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 /*::::::::::::::::::UNIVERSAL CSS:::::::::::::::::::::::*/
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+*:focus {
+    outline: none;
+}
 h1,h2,h3,h4,h5,h6{
   font-family: 'Raleway',sans-serif;
 }
@@ -28,8 +31,32 @@ h1,h2,h3,h4,h5,h6{
 .menu_list a:hover{
     text-decoration:none  !important;
 }
+/*file uploading button design*/
 
-
+input[type='file']::-webkit-file-upload-button {
+  height:40px;
+  border: none;
+  outline: none !important;
+  font-family:'Raleway',sans-serif;;
+  background:#7B1FA2;
+  padding-top: 3px;
+  padding-right:12px;
+  color: #fff;
+}
+.file_upload{
+  display: inline-flex;
+  width: 100%;
+  background:#00BCD4;
+  color: #fff;
+}
+.file_upload_icon{
+  width:40px;
+  height:40px;
+  padding-left:10px;
+  padding-top: 8px;
+  background:#7B1FA2;
+  color: #fff;
+}
 /********************************************************************************/
 /*:::::::::::::::::MATERIAL DESIGN CUSTOMIZED:::::::::::::::::::::::::::::::::::*/
 /********************************************************************************/
