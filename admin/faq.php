@@ -97,141 +97,56 @@ if(!isset($_SESSION['admin_id'])){
     </div>
     <main class="mdl-layout__content">
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-            <div class="floating_btn">
-                <!-- Colored FAB button with ripple -->
-                <a href="insert/faq.php">
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                        <i class="material-icons">add</i>
-                    </button>
-                </a>
-            </div>
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                  <div class="mdl-cell mdl-cell--2-col"></div>
-                    <div class="mdl-cell mdl-cell--10-col">
-                      <?php
-                         while($row = $result->fetch_assoc()) {
-                             $id = $row['id'];
-                             $question = $row['question'];
-                             $answer = $row['answer'];
-                     ?>
-                      <div class="faq">
-                          <div class="question">
-                              <?php echo $question ?>
-                          </div>
-                          <div class="answer">
-                              <?php echo $answer ?>
-                          </div>
-                      </div>
-                      <?php
-                        }
-                      ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-          <div class="floating_btn">
-              <!-- Colored FAB button with ripple -->
-              <a href="insert/faq.php">
-                  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                      <i class="material-icons">add</i>
-                  </button>
-              </a>
-          </div>
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col"></div>
-                  <div class="mdl-cell mdl-cell--10-col">
-                    <?php
-                       while($row = $result1->fetch_assoc()) {
-                           $id = $row['id'];
-                           $question = $row['question'];
-                           $answer = $row['answer'];
-                   ?>
-                      <div class="faq">
-                          <div class="question">
-                              <?php echo $question ?>
-                          </div>
-                          <div class="answer">
-                              <?php echo $answer ?>
-                          </div>
-                      </div>
-                    <?php
-                      }
-                    ?>
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
+                    </div>
                   </div>
               </div>
           </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-          <div class="floating_btn">
-              <!-- Colored FAB button with ripple -->
-              <a href="insert/faq.php">
-                  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                      <i class="material-icons">add</i>
-                  </button>
-              </a>
-          </div>
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col"></div>
-                  <div class="mdl-cell mdl-cell--10-col">
-                    <?php
-                       while($row = $result2->fetch_assoc()) {
-                           $id = $row['id'];
-                           $question = $row['question'];
-                           $answer = $row['answer'];
-                   ?>
-                      <div class="faq">
-                          <div class="question">
-                              <?php echo $question ?>
-                          </div>
-                          <div class="answer">
-                              <?php echo $answer ?>
-                          </div>
-                      </div>
-                    <?php
-                      }
-                    ?>
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
+                    </div>
                   </div>
               </div>
           </div>
-        </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-          <div class="floating_btn">
-              <!-- Colored FAB button with ripple -->
-              <a href="insert/faq.php">
-                  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                      <i class="material-icons">add</i>
-                  </button>
-              </a>
-          </div>
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col"></div>
-                  <div class="mdl-cell mdl-cell--10-col">
-                    <?php
-                       while($row = $result3->fetch_assoc()) {
-                           $id = $row['id'];
-                           $question = $row['question'];
-                           $answer = $row['answer'];
-                   ?>
-                    <div class="faq">
-                        <div class="question">
-                            <?php echo $question ?>
-                        </div>
-                        <div class="answer">
-                            <?php echo $answer ?>
-                        </div>
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
                     </div>
-                    <?php
-                      }
-                    ?>
                   </div>
               </div>
           </div>

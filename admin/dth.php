@@ -94,49 +94,46 @@ if(!isset($_SESSION['admin_id'])){
             </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--10-col">
-
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
                     </div>
-                    <div class="mdl-cell mdl-cell--2-col">
-                      <form action="upload.php" method="post" enctype="multipart/form-data" name="dthservice" id="dthservice">
-                        <label for="exampleFileUpload" class="button">Upload File</label>
-                        <input type="file" id="exampleFileUpload" class="show-for-sr">
-                      </form>
-                    </div>
-                </div>
-            </div>
+                  </div>
+              </div>
+          </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--10-col">
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
                     </div>
-                    <div class="mdl-cell mdl-cell--2-col">
-                      <form action="upload.php" method="post" enctype="multipart/form-data" name="dthservice" id="dthservice">
-                        <label for="exampleFileUpload" class="button">Upload File</label>
-                        <input type="file" id="exampleFileUpload" class="show-for-sr">
-                      </form>
-                    </div>
-                </div>
-            </div>
+                  </div>
+              </div>
+          </div>
         </section>
         <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--10-col">
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <div class="file_upload">
+                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                      <input type="file" name="file" value="Upload">
                     </div>
-                    <div class="mdl-cell mdl-cell--2-col">
-                      <form action="upload.php" method="post" enctype="multipart/form-data" name="dthservice" id="dthservice">
-                        <button type="file" name="button">Upload</button>
-                      </form>
-                    </div>
-                </div>
-            </div>
+                  </div>
+              </div>
+          </div>
         </section>
     </main>
 </div>
