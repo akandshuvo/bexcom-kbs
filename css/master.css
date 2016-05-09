@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6{
 /*file uploading button design*/
 
 input[type='file']::-webkit-file-upload-button {
-  height:40px;
+  height:37px;
   border: none;
   outline: none !important;
   font-family:'Raleway',sans-serif;;
@@ -52,12 +52,16 @@ input[type='file']::-webkit-file-upload-button {
 }
 .file_upload_icon{
   width:40px;
-  height:40px;
+  height:37px;
   padding-left:10px;
-  padding-top: 8px;
+  padding-top: 5px;
   background:#7B1FA2;
   color: #fff;
   border-bottom: solid #6A1B9A;
+}
+.table_header{
+  background: #7B1FA2;
+  color: #fff;
 }
 /********************************************************************************/
 /*:::::::::::::::::MATERIAL DESIGN CUSTOMIZED:::::::::::::::::::::::::::::::::::*/
