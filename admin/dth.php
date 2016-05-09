@@ -90,7 +90,7 @@ if(!isset($_SESSION['admin_id'])){
                     <div class="mdl-cell mdl-cell--4-col"></div>
 
                     <div class="mdl-cell mdl-cell--3-col">
-                      <form class="" action="dth_upload.php" method="post"  enctype="multipart/form-data">
+                      <form class="" action="upload/dth_upload.php" method="post"  enctype="multipart/form-data">
                         <div class="file_upload">
                           <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
                           <input type="file" name="file" value="Upload">
@@ -113,7 +113,7 @@ if(!isset($_SESSION['admin_id'])){
                     		<td  class="table_header">ACTION</td>
                       </tr>
                       <?php
-                  	$sql="SELECT * FROM upload_location WHERE location='../docs/dth/product/'  ";
+                  	$sql="SELECT * FROM upload_location WHERE location='../../docs/dth/product/'  ";
                   	$result_set=mysql_query($sql);
                   	while($row=mysql_fetch_array($result_set))
                   	{
@@ -154,7 +154,7 @@ if(!isset($_SESSION['admin_id'])){
                   <div class="mdl-cell mdl-cell--4-col"></div>
 
                   <div class="mdl-cell mdl-cell--3-col">
-                    <form class="" action="dth_upload.php" method="post"  enctype="multipart/form-data">
+                    <form class="" action="upload/dth_upload.php" method="post"  enctype="multipart/form-data">
                       <div class="file_upload">
                         <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
                         <input type="file" name="file" value="Upload">
@@ -176,7 +176,7 @@ if(!isset($_SESSION['admin_id'])){
                       <td  class="table_header">ACTION</td>
                     </tr>
                     <?php
-                  $sql="SELECT * FROM upload_location WHERE location='../docs/dth/services/'";
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/dth/services/'";
                   $result_set=mysql_query($sql);
                   while($row=mysql_fetch_array($result_set))
                   {
@@ -214,7 +214,7 @@ if(!isset($_SESSION['admin_id'])){
                   <div class="mdl-cell mdl-cell--4-col"></div>
 
                   <div class="mdl-cell mdl-cell--3-col">
-                    <form class="" action="dth_upload.php" method="post"  enctype="multipart/form-data">
+                    <form class="" action="upload/dth_upload.php" method="post"  enctype="multipart/form-data">
                       <div class="file_upload">
                         <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
                         <input type="file" name="file" value="Upload">
@@ -236,7 +236,7 @@ if(!isset($_SESSION['admin_id'])){
                       <td  class="table_header">ACTION</td>
                     </tr>
                     <?php
-                  $sql="SELECT * FROM upload_location WHERE location='../docs/dth/offer/' ";
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/dth/offer/' ";
                   $result_set=mysql_query($sql);
                   while($row=mysql_fetch_array($result_set))
                   {
@@ -275,7 +275,7 @@ if(!isset($_SESSION['admin_id'])){
                   <div class="mdl-cell mdl-cell--4-col"></div>
 
                   <div class="mdl-cell mdl-cell--3-col">
-                    <form class="" action="dth_upload.php" method="post"  enctype="multipart/form-data">
+                    <form class="" action="upload/dth_upload.php" method="post"  enctype="multipart/form-data">
                       <div class="file_upload">
                         <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
                         <input type="file" name="file" value="Upload">
@@ -297,7 +297,7 @@ if(!isset($_SESSION['admin_id'])){
                       <td  class="table_header">ACTION</td>
                     </tr>
                     <?php
-                  $sql="SELECT * FROM upload_location WHERE location='../docs/dth/why_real_vu/'";
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/dth/why_real_vu/'";
                   $result_set=mysql_query($sql);
                   while($row=mysql_fetch_array($result_set))
                   {
