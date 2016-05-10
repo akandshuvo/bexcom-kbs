@@ -3,6 +3,8 @@ session_start();
 if(!isset($_SESSION['admin_id'])){
     header('location:../index.php');
 }
+
+include_once '../dbconfig.php';
 ?>
 
 <!doctype html>
@@ -77,62 +79,260 @@ if(!isset($_SESSION['admin_id'])){
         </nav>
     </div>
     <main class="mdl-layout__content">
+
+<!--television-->
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
                   <div class="mdl-cell mdl-cell--4-col"></div>
+
                   <div class="mdl-cell mdl-cell--3-col">
-                    <div class="file_upload">
-                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
-                      <input type="file" name="file" value="Upload">
+                    <form class="" action="upload/press_release_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
-                  </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="television"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/press_release/television/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/press_release/television/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="delete.php?delete=uploads/<?php echo $row['file'] ?>" target="_blank">
+                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                              <i class="material-icons">&#xE92B;</i>
+                            </button>
+                          </a>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
+                </div>
               </div>
           </div>
         </section>
+
+<!--radio-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
                   <div class="mdl-cell mdl-cell--4-col"></div>
+
                   <div class="mdl-cell mdl-cell--3-col">
-                    <div class="file_upload">
-                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
-                      <input type="file" name="file" value="Upload">
+                    <form class="" action="upload/press_release_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
-                  </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="radio"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/press_release/radio/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/press_release/radio/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="delete.php?delete=uploads/<?php echo $row['file'] ?>" target="_blank">
+                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                              <i class="material-icons">&#xE92B;</i>
+                            </button>
+                          </a>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
+                </div>
               </div>
           </div>
         </section>
+
+<!--newspapaer-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
                   <div class="mdl-cell mdl-cell--4-col"></div>
+
                   <div class="mdl-cell mdl-cell--3-col">
-                    <div class="file_upload">
-                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
-                      <input type="file" name="file" value="Upload">
+                    <form class="" action="upload/press_release_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
-                  </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="newspaper"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/press_release/newspaper/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/press_release/newspaper/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="delete.php?delete=uploads/<?php echo $row['file'] ?>" target="_blank">
+                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                              <i class="material-icons">&#xE92B;</i>
+                            </button>
+                          </a>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
+                </div>
               </div>
           </div>
         </section>
+
+<!--billboard-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-4">
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
                   <div class="mdl-cell mdl-cell--4-col"></div>
+
                   <div class="mdl-cell mdl-cell--3-col">
-                    <div class="file_upload">
-                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
-                      <input type="file" name="file" value="Upload">
+                    <form class="" action="upload/press_release_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
-                  </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="billboard"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/press_release/billboard/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/press_release/billboard/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="delete.php?delete=uploads/<?php echo $row['file'] ?>" target="_blank">
+                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                              <i class="material-icons">&#xE92B;</i>
+                            </button>
+                          </a>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
+                </div>
               </div>
           </div>
         </section>
+
+
     </main>
 </div>
 

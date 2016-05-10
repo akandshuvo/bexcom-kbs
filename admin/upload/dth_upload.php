@@ -26,7 +26,9 @@ if(isset($_POST['offer']))
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
 		mysql_query($sql);
+		mysql_query($sql2);
 		?>
 		<script>
 		alert('successfully uploaded');
@@ -68,7 +70,9 @@ if(isset($_POST['product']))
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
 		mysql_query($sql);
+		mysql_query($sql2);
 		?>
 		<script>
 		alert('successfully uploaded');
@@ -110,7 +114,9 @@ if(isset($_POST['services']))
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
 		mysql_query($sql);
+		mysql_query($sql2);
 		?>
 		<script>
 		alert('successfully uploaded');
@@ -152,7 +158,9 @@ if(isset($_POST['why_real_vu']))
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
 		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
 		mysql_query($sql);
+		mysql_query($sql2);
 		?>
 		<script>
 		alert('successfully uploaded');

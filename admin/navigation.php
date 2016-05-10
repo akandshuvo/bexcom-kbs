@@ -84,5 +84,5 @@
 </div>
 <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 <div class="menu">
-    <div class="name"><a href="press_release.php">press release</a></div>
+    <div class="name"><a href="press_release.php">archive</a></div>
 </div>
