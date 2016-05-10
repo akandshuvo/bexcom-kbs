@@ -3,6 +3,7 @@
     if(!isset($_SESSION['admin_id'])){
         header('location:../index.php');
     }
+include_once '../dbconfig.php';
 ?>
 
 <!doctype html>
@@ -26,13 +27,6 @@
     <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 </head>
 <body>
-    <!--DATA IS PULLING FROM DATABASE-->
-<?php
-    include '../scripts/db.php';
-    $query = "SELECT id,division,district,upazilla,thana,post_code,area_village from installer_address";
-    $result = $conn->query($query);
-    //$conn->close();
-?>
 
 <!-- Always shows a header, even in smaller screens. -->
 <!-- Simple header with fixed tabs. -->
@@ -82,23 +76,71 @@
     </div>
 
     <main class="mdl-layout__content">
-        <!--FLOATIG BUTTON-->
 
-        <!--FLOATIG BUTTON-->
+
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
           <div class="page-content">
               <!-- Your content goes here -->
               <div class="mdl-grid">
                   <div class="mdl-cell mdl-cell--4-col"></div>
+
                   <div class="mdl-cell mdl-cell--3-col">
-                    <div class="file_upload">
-                      <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
-                      <input type="file" name="file" value="Upload">
+                    <form class="" action="upload/installer_address_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
-                  </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="installer_address"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/installer_address/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/installer_address/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="delete.php?delete=uploads/<?php echo $row['file'] ?>" target="_blank">
+                            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+                              <i class="material-icons">&#xE92B;</i>
+                            </button>
+                          </a>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
+                </div>
               </div>
           </div>
         </section>
+
+
     </main>
 </div>
 
