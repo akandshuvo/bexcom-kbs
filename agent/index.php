@@ -1,10 +1,10 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['agent_id'])){
-        header('location:../index.php');
-    }
+session_start();
+if(!isset($_SESSION['agent_id'])){
+    header('location:../index.php');
+}
+  include_once '../dbconfig.php';
 ?>
-
 <!doctype html>
 <html lang=''>
 <head>
@@ -35,11 +35,8 @@
             <!-- Title -->
             <span class="mdl-layout-title">BexCOM</span>
             <div class="mdl-layout-spacer"></div>
-            <!--USER NAME AFTER LOGIN-->
-            <span class="">AFTER SALES SERVICE LOCATION</span>
-            <div class="mdl-layout-spacer"></div>
-            <!--USER NAME AFTER LOGIN-->
-            <span class="">WELCOME,&nbsp;<?php echo $_SESSION['agent_name']?></span>
+<!--USER NAME AFTER LOGIN-->
+            <span class=""><?php echo $_SESSION['agent_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -48,13 +45,14 @@
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">
+                    <li class="mdl-menu__item"><!-- Accent-colored raised button with ripple -->
                         <a href="../scripts/logout.php">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-                                LOG OUT
+                             LOG OUT
                             </button>
                         </a>
                     </li>
+
                 </ul>
             </span>
         </div>
@@ -64,7 +62,7 @@
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">BexCOM</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation -->
@@ -80,14 +78,14 @@
                 <!-- Your content goes here -->
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--12-col">
-                      <div class="text-center">
-                          <div class="welcome">WELCOME TO BEXIMCO COMMUNICATION</div>
-                      </div>
+                        <div class="text-center">
+                            <div class="welcome">WELCOME TO BEXIMCO COMMUNICATION</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-  </main>
+    </main>
 </div>
 
 
@@ -98,8 +96,5 @@
 <script src="../vendor/bootstrap/js/bootstrap.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.2/dialog-polyfill.min.js'></script>
 <script src="../vendor/mdl/material.js"></script>
-
-
-
 </body>
 <html>

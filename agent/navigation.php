@@ -1,3 +1,7 @@
+<!--:::::::::::::::::::::::::::::::::::NOTICE:::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+<div class="menu">
+    <div class="name"><a href="notice.php">notice</a></div>
+</div>
 <!--:::::::::::::::::::::::::::::::::::ABOUT DTH:::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 <div class="menu">
     <div class="name"><a href="dth.php">About DTH</a></div>
@@ -81,8 +85,4 @@
 <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 <div class="menu">
     <div class="name"><a href="contact_details.php">contact details</a></div>
-</div>
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-<div class="menu">
-    <div class="name"><a href="press_release.php">press release</a></div>
 </div>

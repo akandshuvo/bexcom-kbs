@@ -3,8 +3,8 @@ session_start();
 if(!isset($_SESSION['agent_id'])){
     header('location:../index.php');
 }
+  include_once '../dbconfig.php';
 ?>
-
 <!doctype html>
 <html lang=''>
 <head>
@@ -35,8 +35,8 @@ if(!isset($_SESSION['agent_id'])){
             <!-- Title -->
             <span class="mdl-layout-title">TRAINING MATERIALS</span>
             <div class="mdl-layout-spacer"></div>
-            <!--USER NAME AFTER LOGIN-->
-            <span class="">WELCOME,&nbsp;<?php echo $_SESSION['agent_name']?></span>
+<!--USER NAME AFTER LOGIN-->
+            <span class=""><?php echo $_SESSION['agent_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -45,13 +45,14 @@ if(!isset($_SESSION['agent_id'])){
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">
+                    <li class="mdl-menu__item"><!-- Accent-colored raised button with ripple -->
                         <a href="../scripts/logout.php">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-                                LOG OUT
+                             LOG OUT
                             </button>
                         </a>
                     </li>
+
                 </ul>
             </span>
         </div>
@@ -75,198 +76,242 @@ if(!isset($_SESSION['agent_id'])){
         </nav>
     </div>
     <main class="mdl-layout__content">
+
+<!--CRM-->
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
 
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                        <i class="material-icons">&#xE872;</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/training_material/crm/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                          <td><?php echo $row['file'] ?></td>
+                          <td><?php echo $row['type'] ?></td>
+                          <td><?php echo $row['date'] ?></td>
+                          <td><?php echo $row['size'] ?></td>
+                          <td>
+                            <a href="../docs/training_material/crm/<?php echo $row['file'] ?>" target="_blank">
+                              <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                            </a>
+                          </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+<!--product-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
 
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                        <i class="material-icons">&#xE872;</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <form class="" action="upload/training_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="product"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/training_material/product/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/training_material/product/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+<!--service-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
 
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <form class="" action="upload/training_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="service"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/training_material/service/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/training_material/service/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <button  type="button" class="show-modal mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+                            <i class="material-icons">&#xE92B;</i>
+                          </button>
+                          <dialog class="mdl-dialog">
+                            <div class="mdl-dialog__content">
+                              <h3>ARE YOU SURE?</h3><br>
+                              <button type="button"  onclick="deletedata('<?php echo $row['id'] ?>')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">DELETE</button>
+                              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored exit">close</button>
+                            </div>
+                          </dialog>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+<!--Policy-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
 
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <form class="" action="upload/training_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="policy"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/training_material/policy/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/training_material/crm/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <button  type="button" class="show-modal mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+                            <i class="material-icons">&#xE92B;</i>
+                          </button>
+                          <dialog class="mdl-dialog">
+                            <div class="mdl-dialog__content">
+                              <h3>ARE YOU SURE?</h3><br>
+                              <button type="button"  onclick="deletedata('<?php echo $row['id'] ?>')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">DELETE</button>
+                              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored exit">close</button>
+                            </div>
+                          </dialog>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+
     </main>
 </div>
 
@@ -280,6 +325,35 @@ if(!isset($_SESSION['agent_id'])){
 <script src="../vendor/mdl/material.js"></script>
 
 
+<script type="text/javascript">
+  var dialog = document.querySelector('dialog');
+  var showModalButton = document.querySelector('.show-modal');
+  if (! dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  showModalButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.exit').addEventListener('click', function() {
+    dialog.close();
+  });
+</script>
+
+
+<script type="text/javascript">
+//DELETE DATA FROM DATABASE
+  function deletedata(str){
+  var id = str;
+  $.ajax({
+   type: "GET",
+   url: "delete/delete.php?id="+id
+  }).done(function( data ) {
+  $('#info').html(data);
+  viewdata();
+  });
+  document.location.reload(true);
+  }
+</script>
 
 </body>
 <html>

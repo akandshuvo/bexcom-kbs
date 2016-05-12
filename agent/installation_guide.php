@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION['agent_id'])){
     header('location:../index.php');
 }
+  include_once '../dbconfig.php';
 ?>
 
 <!doctype html>
@@ -35,8 +36,8 @@ if(!isset($_SESSION['agent_id'])){
             <!-- Title -->
             <span class="mdl-layout-title">INSTALLATION GUIDE</span>
             <div class="mdl-layout-spacer"></div>
-            <!--USER NAME AFTER LOGIN-->
-            <span class="">WELCOME,&nbsp;<?php echo $_SESSION['agent_name']?></span>
+<!--USER NAME AFTER LOGIN-->
+            <span class=""><?php echo $_SESSION['agent_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -45,13 +46,14 @@ if(!isset($_SESSION['agent_id'])){
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">
+                    <li class="mdl-menu__item"><!-- Accent-colored raised button with ripple -->
                         <a href="../scripts/logout.php">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-                                LOG OUT
+                             LOG OUT
                             </button>
                         </a>
                     </li>
+
                 </ul>
             </span>
         </div>
@@ -75,258 +77,242 @@ if(!isset($_SESSION['agent_id'])){
         </nav>
     </div>
     <main class="mdl-layout__content">
+
+<!--html-->
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--10-col">
-                        <table class="table table-bordered table-responsive myTable">
-                            <thead>
-                            <tr>
-                                <th>Filename</th>
-                                <th>Type</th>
-                                <th>Download</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            // Opens directory
-                            $myDirectory=opendir("../docs");
-                            // Gets each entry
-                            while($entryName=readdir($myDirectory)) {
-                                $dirArray[]=$entryName;
-                            }
-                            // Finds extensions of files
-                            function findexts ($filename) {
-                                $filename=strtolower($filename);
-                                $exts=split("[/\\.]", $filename);
-                                $n=count($exts)-1;
-                                $exts=$exts[$n];
-                                return $exts;
-                            }
-                            // Closes directory
-                            closedir($myDirectory);
-                            // Counts elements in array
-                            $indexCount=count($dirArray);
-                            // Sorts files
-                            sort($dirArray);
-                            // Loops through the array of files
-                            for($index=0; $index < $indexCount; $index++) {
-                                // Allows ./?hidden to show hidden files
-                                if($_SERVER['QUERY_STRING']=="hidden")
-                                {$hide="";
-                                    $ahref="./";
-                                    $atext="Hide";}
-                                else
-                                {$hide=".";
-                                    $ahref="./?hidden";
-                                    $atext="Show";}
-                                if(substr("$dirArray[$index]", 0, 1) != $hide) {
-                                    // Gets File Names
-                                    $name=$dirArray[$index];
-                                    $namehref=$dirArray[$index];
-                                    // Gets Extensions
-                                    $extn=findexts($dirArray[$index]);
-
-                                    // Prettifies File Types, add more to suit your needs.
-                                    switch ($extn){
-                                        case "png": $extn="PNG Image"; break;
-                                        case "jpg": $extn="JPEG Image"; break;
-                                        case "svg": $extn="SVG Image"; break;
-                                        case "gif": $extn="GIF Image"; break;
-                                        case "ico": $extn="Windows Icon"; break;
-                                        case "txt": $extn="Text File"; break;
-                                        case "log": $extn="Log File"; break;
-                                        case "htm": $extn="HTML File"; break;
-                                        case "php": $extn="PHP Script"; break;
-                                        case "js": $extn="Javascript"; break;
-                                        case "css": $extn="Stylesheet"; break;
-                                        case "pdf": $extn="PDF Document"; break;
-                                        case "zip": $extn="ZIP Archive"; break;
-                                        case "bak": $extn="Backup File"; break;
-                                        default: $extn=strtoupper($extn)." File"; break;
-                                    }
-                                    // Separates directories
-                                    if(is_dir($dirArray[$index])) {
-                                        $extn="&lt;Directory&gt;";
-                                        $size="&lt;Directory&gt;";
-                                        $class="dir";
-                                    } else {
-                                        $class="file";
-                                    }
-                                    // Cleans up . and .. directories
-                                    if($name=="."){$name=". (Current Directory)"; $extn="&lt;System Dir&gt;";}
-                                    if($name==".."){$name=".. (Parent Directory)"; $extn="&lt;System Dir&gt;";}
-                                    // Print 'em
-                                    print("
-                                   <tr class='$class'>
-                                     <td>
-                                       <a href='../docs/$namehref' target='_blank'>$name</a>
-                                     </td>
-                                     <td><a href='./$namehref'>$extn</a></td>
-                                     <td>
-                                       <a href='../docs/$namehref' target='_blank'><button type='button'>Download</button></a>
-                                     </td>
-                                   </tr>");
-                                }
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mdl-cell mdl-cell--2-col">
-                        <form action="upload.php" method="post" enctype="multipart/form-data" name="dthproduct" id="dthproduct">
-                            <label for="dthproduct"></label>
-                            <input type="file" name="dthproduct" id="dthproduct" />
-                            <input type="submit" name="Upload" id="Upload" value="Upload" />
-                        </form>
-                    </div>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/installation_guide/html/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                          <td><?php echo $row['file'] ?></td>
+                          <td><?php echo $row['type'] ?></td>
+                          <td><?php echo $row['date'] ?></td>
+                          <td><?php echo $row['size'] ?></td>
+                          <td>
+                            <a href="../docs/installation_guide/html/<?php echo $row['file'] ?>" target="_blank">
+                              <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                            </a>
+                          </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+<!--pdf-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
 
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                        <i class="material-icons">&#xE872;</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <form class="" action="upload/installation_guide_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="pdf"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/installation_guide/pdf/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/installation_guide/pdf/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+<!--ppt-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
 
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <form class="" action="upload/installation_guide_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="ppt"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/installation_guide/ppt/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/installation_guide/ppt/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <button  type="button" class="show-modal mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+                            <i class="material-icons">&#xE92B;</i>
+                          </button>
+                          <dialog class="mdl-dialog">
+                            <div class="mdl-dialog__content">
+                              <h3>ARE YOU SURE?</h3><br>
+                              <button type="button"  onclick="deletedata('<?php echo $row['id'] ?>')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">DELETE</button>
+                              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored exit">close</button>
+                            </div>
+                          </dialog>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+<!--video-->
         <section class="mdl-layout__tab-panel" id="fixed-tab-4">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                <th style="text-align: center">District</th>
-                                <th style="text-align: center">Upazilla</th>
-                                <th style="text-align: center">Thana</th>
-                                <th style="text-align: center">Post Code</th>
-                                <th style="text-align: center ">Area</th>
-                                <th style="text-align: center">Village</th>
-                                <th style="text-align: center">Update</th>
-                                <th style="text-align: center">Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">Dhaka</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7</td>
-                                <td>Samsung Galaxy S7 </td>
-                                <td class="mdl-data-table__cell--non-numeric" >
-                                    Samsung Galaxy S7
-                                </td>
-                                <td>
-                                    <!-- Colored mini FAB button -->
-                                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                        <i class="material-icons">&#xE150;</i>
-                                    </button>
+          <div class="page-content">
+              <!-- Your content goes here -->
+              <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--4-col"></div>
 
-                                </td>
-                                <td>
-
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <form class="" action="upload/installation_guide_upload.php" method="post"  enctype="multipart/form-data">
+                      <div class="file_upload">
+                        <div class="file_upload_icon"><i class="material-icons">&#xE2C3;</i></div>
+                        <input type="file" name="file" value="Upload">
+                      </div>
                     </div>
+                    <div class="mdl-cell mdl-cell--3-col">
+                      <button type="submit" name="video"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">UPLOAD</button>
+                    </div>
+                  </form>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/installation_guide/video/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                        <td><?php echo $row['file'] ?></td>
+                        <td><?php echo $row['type'] ?></td>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['size'] ?></td>
+                        <td>
+                          <a href="../docs/installation_guide/video/<?php echo $row['file'] ?>" target="_blank">
+                            <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                          </a>
+                        </td>
+                        <td>
+                          <button  type="button" class="show-modal mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+                            <i class="material-icons">&#xE92B;</i>
+                          </button>
+                          <dialog class="mdl-dialog">
+                            <div class="mdl-dialog__content">
+                              <h3>ARE YOU SURE?</h3><br>
+                              <button type="button"  onclick="deletedata('<?php echo $row['id'] ?>')" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">DELETE</button>
+                              <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored exit">close</button>
+                            </div>
+                          </dialog>
+                        </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+
     </main>
 </div>
 
@@ -340,6 +326,35 @@ if(!isset($_SESSION['agent_id'])){
 <script src="../vendor/mdl/material.js"></script>
 
 
+<script type="text/javascript">
+  var dialog = document.querySelector('dialog');
+  var showModalButton = document.querySelector('.show-modal');
+  if (! dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  showModalButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.exit').addEventListener('click', function() {
+    dialog.close();
+  });
+</script>
+
+
+<script type="text/javascript">
+//DELETE DATA FROM DATABASE
+  function deletedata(str){
+  var id = str;
+  $.ajax({
+   type: "GET",
+   url: "delete/delete.php?id="+id
+  }).done(function( data ) {
+  $('#info').html(data);
+  viewdata();
+  });
+  document.location.reload(true);
+  }
+</script>
 
 </body>
 <html>

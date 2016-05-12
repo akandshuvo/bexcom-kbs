@@ -1,10 +1,10 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['agent_id'])){
-        header('location:../index.php');
-    }
+session_start();
+if(!isset($_SESSION['agent_id'])){
+    header('location:../index.php');
+}
+  include_once '../dbconfig.php';
 ?>
-
 <!doctype html>
 <html lang=''>
 <head>
@@ -26,13 +26,6 @@
     <!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 </head>
 <body>
-    <!--DATA IS PULLING FROM DATABASE-->
-<?php
-    include '../scripts/db.php';
-    $query = "SELECT id,division,district,upazilla,thana,post_code,area_village from installer_address";
-    $result = $conn->query($query);
-    //$conn->close();
-?>
 
 <!-- Always shows a header, even in smaller screens. -->
 <!-- Simple header with fixed tabs. -->
@@ -43,8 +36,8 @@
             <!-- Title -->
             <span class="mdl-layout-title">INSTALLER ADDRESS</span>
             <div class="mdl-layout-spacer"></div>
-            <!--USER NAME AFTER LOGIN-->
-            <span class="">WELCOME,&nbsp;<?php echo $_SESSION['agent_name']?></span>
+<!--USER NAME AFTER LOGIN-->
+            <span class=""><?php echo $_SESSION['agent_name']?></span>
             <span><!-- Right aligned menu below button -->
                 <button id="demo-menu-lower-right"
                         class="mdl-button mdl-js-button mdl-button--icon">
@@ -53,13 +46,14 @@
 
                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
                     for="demo-menu-lower-right">
-                    <li class="mdl-menu__item">
+                    <li class="mdl-menu__item"><!-- Accent-colored raised button with ripple -->
                         <a href="../scripts/logout.php">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
-                                LOG OUT
+                             LOG OUT
                             </button>
                         </a>
                     </li>
+
                 </ul>
             </span>
         </div>
@@ -81,77 +75,50 @@
     </div>
 
     <main class="mdl-layout__content">
-        <!--FLOATIG BUTTON-->
-        <div class="floating_btn">
-            <!-- Colored FAB button with ripple -->
-            <a href="insert/installer_address.php">
-                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                    <i class="material-icons">add</i>
-                </button>
-            </a>
-        </div>
-        <!--FLOATIG BUTTON-->
+
+
         <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-            <div class="page-content">
-                <!-- Your content goes here -->
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <table align="center" class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp dl-data-table--selectable">
-                            <thead>
-                                <tr>
-                                    <th style="text-align: center" class="mdl-data-table__cell--non-numeric">Division</th>
-                                    <th style="text-align: center">District</th>
-                                    <th style="text-align: center">Upazilla</th>
-                                    <th style="text-align: center">Thana</th>
-                                    <th style="text-align: center">Post Code</th>
-                                    <th style="text-align: center ">Area</th>
-                                    <th style="text-align: center">Village</th>
-                                    <th style="text-align: center">Update</th>
-                                    <th style="text-align: center">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                     <?php
-                                        while($row = $result->fetch_assoc()) {
-                                            $id = $row['id'];
-                                            $division = $row['division'];
-                                            $district = $row['district'];
-                                            $upazilla = $row['upazilla'];
-                                            $thana = $row['thana'];
-                                            $post_code = $row['post_code'];
-                                            $area_village = $row['area_village'];
-                                    ?>
-                                    <tr>
-                                        <td class="mdl-data-table__cell--non-numeric"><?php echo $division?></td>
-                                        <td><?php echo $district?></td>
-                                        <td><?php echo $upazilla?></td>
-                                        <td><?php echo $thana?></td>
-                                        <td><?php echo $post_code?></td>
-                                        <td><?php echo $area_village?></td>
-                                        <td class="mdl-data-table__cell--non-numeric"><?php echo $division?></td>
-                                        <td>
-                                            <!-- Colored mini FAB button -->
-                                            <button
-                                                class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--primary">
-                                                <i class="material-icons">&#xE150;</i>
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button
-                                                class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--accent">
-                                                <i class="material-icons">&#xE872;</i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            ?>
-                            </tbody>
-                        </table>
-                    </div>
+          <div class="page-content">
+              <!-- Your content goes here -->
+
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <table class="table table-bordered text-center">
+                    <tr>
+                      <td  class="table_header">File Name</td>
+                      <td  class="table_header">File Type</td>
+                      <td  class="table_header">Uploaded On</td>
+                      <td  class="table_header">File Size(KB)</td>
+                      <td  class="table_header">View</td>
+                      <td  class="table_header">ACTION</td>
+                    </tr>
+                    <?php
+                  $sql="SELECT * FROM upload_location WHERE location='../../docs/installer_address/'  ";
+                  $result_set=mysql_query($sql);
+                  while($row=mysql_fetch_array($result_set))
+                  {
+                    ?>
+                        <tr>
+                          <td><?php echo $row['file'] ?></td>
+                          <td><?php echo $row['type'] ?></td>
+                          <td><?php echo $row['date'] ?></td>
+                          <td><?php echo $row['size'] ?></td>
+                          <td>
+                            <a href="../docs/installer_address/<?php echo $row['file'] ?>" target="_blank">
+                              <button   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">VIEW</button>
+                            </a>
+                          </td>
+                        </tr>
+                        <?php
+                  }
+                  ?>
+                    </table>
                 </div>
-            </div>
+              </div>
+          </div>
         </section>
+
+
     </main>
 </div>
 
@@ -166,5 +133,34 @@
 
 
 
+<script type="text/javascript">
+  var dialog = document.querySelector('dialog');
+  var showModalButton = document.querySelector('.show-modal');
+  if (! dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  showModalButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.exit').addEventListener('click', function() {
+    dialog.close();
+  });
+</script>
+
+
+<script type="text/javascript">
+//DELETE DATA FROM DATABASE
+  function deletedata(str){
+  var id = str;
+  $.ajax({
+   type: "GET",
+   url: "delete/delete.php?id="+id
+  }).done(function( data ) {
+  $('#info').html(data);
+  viewdata();
+  });
+  document.location.reload(true);
+  }
+</script>
 </body>
 <html>

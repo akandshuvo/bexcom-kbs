@@ -7,11 +7,13 @@ include_once '../../dbconfig.php';
 if(isset($_POST['offer']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("m.d.y")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
 	$folder="../../docs/dth/offer/";
+	$root="dth";
+	$sub_root="offer";
 
 	// new file size in KB
 	$new_size = $file_size/1024;
@@ -25,8 +27,8 @@ if(isset($_POST['offer']))
 
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
-		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
-		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql="INSERT INTO upload_location(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
+		$sql2="INSERT INTO archive(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
 		mysql_query($sql);
 		mysql_query($sql2);
 		?>
@@ -51,11 +53,13 @@ if(isset($_POST['offer']))
 if(isset($_POST['product']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("m.d.y")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
 	$folder="../../docs/dth/product/";
+	$root="dth";
+	$sub_root="product";
 
 	// new file size in KB
 	$new_size = $file_size/1024;
@@ -69,8 +73,8 @@ if(isset($_POST['product']))
 
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
-		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
-		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql="INSERT INTO upload_location(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
+		$sql2="INSERT INTO archive(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
 		mysql_query($sql);
 		mysql_query($sql2);
 		?>
@@ -95,11 +99,13 @@ if(isset($_POST['product']))
 if(isset($_POST['services']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("m.d.y")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
 	$folder="../../docs/dth/services/";
+	$root="dth";
+	$sub_root="services";
 
 	// new file size in KB
 	$new_size = $file_size/1024;
@@ -113,8 +119,8 @@ if(isset($_POST['services']))
 
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
-		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
-		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql="INSERT INTO upload_location(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
+		$sql2="INSERT INTO archive(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
 		mysql_query($sql);
 		mysql_query($sql2);
 		?>
@@ -139,11 +145,13 @@ if(isset($_POST['services']))
 if(isset($_POST['why_real_vu']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("m.d.y")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
 	$folder="../../docs/dth/why_real_vu/";
+	$root="dth";
+	$sub_root="why_real_vu";
 
 	// new file size in KB
 	$new_size = $file_size/1024;
@@ -157,8 +165,8 @@ if(isset($_POST['why_real_vu']))
 
 	if(move_uploaded_file($file_loc,$folder.$final_file))
 	{
-		$sql="INSERT INTO upload_location(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
-		$sql2="INSERT INTO archive(file,type,size,location) VALUES('$final_file','$file_type','$new_size','$folder')";
+		$sql="INSERT INTO upload_location(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
+		$sql2="INSERT INTO archive(file,type,size,location,root,sub_root) VALUES('$final_file','$file_type','$new_size','$folder','$root','$sub_root')";
 		mysql_query($sql);
 		mysql_query($sql2);
 		?>
