@@ -8,7 +8,7 @@ include_once '../../dbconfig.php';
 if(isset($_POST['html']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -55,7 +55,7 @@ if(isset($_POST['html']))
 if(isset($_POST['pdf']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -103,7 +103,7 @@ if(isset($_POST['pdf']))
 if(isset($_POST['ppt']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -151,7 +151,7 @@ if(isset($_POST['ppt']))
 if(isset($_POST['video']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];

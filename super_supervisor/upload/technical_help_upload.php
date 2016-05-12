@@ -6,7 +6,7 @@ include_once '../../dbconfig.php';
     if(isset($_POST['our_satelite']))
       {
 
-        $file =$_FILES['file']['name']."-".rand(1000,100000);
+        $file =date("H i s")."-".$_FILES['file']['name'];
         $file_loc = $_FILES['file']['tmp_name'];
         $file_size = $_FILES['file']['size'];
         $file_type = $_FILES['file']['type'];
@@ -53,7 +53,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['dish_antena']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -101,7 +101,7 @@ include_once '../../dbconfig.php';
     if(isset($_POST['lnb']))
     {
 
-      $file =$_FILES['file']['name']."-".rand(1000,100000);
+      $file =date("H i s")."-".$_FILES['file']['name'];
       $file_loc = $_FILES['file']['tmp_name'];
       $file_size = $_FILES['file']['size'];
       $file_type = $_FILES['file']['type'];
@@ -148,7 +148,7 @@ include_once '../../dbconfig.php';
     if(isset($_POST['stb']))
     {
 
-      $file =$_FILES['file']['name']."-".rand(1000,100000);
+      $file =date("H i s")."-".$_FILES['file']['name'];
       $file_loc = $_FILES['file']['tmp_name'];
       $file_size = $_FILES['file']['size'];
       $file_type = $_FILES['file']['type'];
@@ -195,7 +195,7 @@ include_once '../../dbconfig.php';
     if(isset($_POST['remote']))
     {
 
-      $file =$_FILES['file']['name']."-".rand(1000,100000);
+      $file =date("H i s")."-".$_FILES['file']['name'];
       $file_loc = $_FILES['file']['tmp_name'];
       $file_size = $_FILES['file']['size'];
       $file_type = $_FILES['file']['type'];
@@ -243,7 +243,7 @@ include_once '../../dbconfig.php';
       if(isset($_POST['media_cable']))
       {
 
-        $file =$_FILES['file']['name']."-".rand(1000,100000);
+        $file =date("H i s")."-".$_FILES['file']['name'];
         $file_loc = $_FILES['file']['tmp_name'];
         $file_size = $_FILES['file']['size'];
         $file_type = $_FILES['file']['type'];
@@ -290,7 +290,7 @@ include_once '../../dbconfig.php';
         if(isset($_POST['part_of_dish_mast']))
         {
 
-          $file =$_FILES['file']['name']."-".rand(1000,100000);
+          $file =date("H i s")."-".$_FILES['file']['name'];
           $file_loc = $_FILES['file']['tmp_name'];
           $file_size = $_FILES['file']['size'];
           $file_type = $_FILES['file']['type'];
@@ -336,7 +336,7 @@ include_once '../../dbconfig.php';
         if(isset($_POST['broadcasting_parameters']))
         {
 
-          $file =$_FILES['file']['name']."-".rand(1000,100000);
+          $file =date("H i s")."-".$_FILES['file']['name'];
           $file_loc = $_FILES['file']['tmp_name'];
           $file_size = $_FILES['file']['size'];
           $file_type = $_FILES['file']['type'];

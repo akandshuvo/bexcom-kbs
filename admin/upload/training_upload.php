@@ -8,7 +8,7 @@ include_once '../../dbconfig.php';
 if(isset($_POST['crm']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -54,7 +54,7 @@ if(isset($_POST['crm']))
 if(isset($_POST['product']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -101,7 +101,7 @@ if(isset($_POST['product']))
 if(isset($_POST['service']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -149,7 +149,7 @@ if(isset($_POST['service']))
 if(isset($_POST['policy']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];

@@ -8,7 +8,7 @@ include_once '../../dbconfig.php';
 if(isset($_POST['inbound']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -54,7 +54,7 @@ if(isset($_POST['inbound']))
 if(isset($_POST['outbound']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -101,7 +101,7 @@ if(isset($_POST['outbound']))
 if(isset($_POST['sales']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -149,7 +149,7 @@ if(isset($_POST['sales']))
 if(isset($_POST['promotion']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -195,7 +195,7 @@ if(isset($_POST['promotion']))
 if(isset($_POST['up_sales']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];
@@ -244,7 +244,7 @@ if(isset($_POST['up_sales']))
 if(isset($_POST['cross_sales']))
 {
 
-  $file =$_FILES['file']['name']."-".rand(1000,100000);
+  $file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
   $file_size = $_FILES['file']['size'];
   $file_type = $_FILES['file']['type'];

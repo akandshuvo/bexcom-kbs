@@ -7,7 +7,7 @@ include_once '../../dbconfig.php';
 if(isset($_POST['offer']))
 {
 
-	$file =date("m.d.y")."-".$_FILES['file']['name'];
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
@@ -53,7 +53,7 @@ if(isset($_POST['offer']))
 if(isset($_POST['product']))
 {
 
-	$file =date("m.d.y")."-".$_FILES['file']['name'];
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
@@ -99,7 +99,7 @@ if(isset($_POST['product']))
 if(isset($_POST['services']))
 {
 
-	$file =date("m.d.y")."-".$_FILES['file']['name'];
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
@@ -145,7 +145,7 @@ if(isset($_POST['services']))
 if(isset($_POST['why_real_vu']))
 {
 
-	$file =date("m.d.y")."-".$_FILES['file']['name'];
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];

@@ -8,7 +8,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['short_code']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -55,7 +55,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['long_code']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -101,7 +101,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['corporate_office']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -149,7 +149,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['email_id']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -196,7 +196,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['website']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];

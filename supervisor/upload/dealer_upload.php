@@ -8,7 +8,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['location']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -54,7 +54,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['activation_model']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -103,7 +103,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['flow_chart']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];
@@ -149,7 +149,7 @@ include_once '../../dbconfig.php';
   if(isset($_POST['dashboard']))
   {
 
-    $file =$_FILES['file']['name']."-".rand(1000,100000);
+    $file =date("H i s")."-".$_FILES['file']['name'];
     $file_loc = $_FILES['file']['tmp_name'];
     $file_size = $_FILES['file']['size'];
     $file_type = $_FILES['file']['type'];

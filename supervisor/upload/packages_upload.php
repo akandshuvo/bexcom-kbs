@@ -7,7 +7,7 @@ include_once '../../dbconfig.php';
 if(isset($_POST['packs']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
@@ -55,7 +55,7 @@ if(isset($_POST['packs']))
 if(isset($_POST['price']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
@@ -104,7 +104,7 @@ if(isset($_POST['price']))
 if(isset($_POST['channel']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
@@ -152,7 +152,7 @@ if(isset($_POST['channel']))
 if(isset($_POST['add_ons']))
 {
 
-	$file =$_FILES['file']['name']."-".rand(1000,100000);
+	$file =date("H i s")."-".$_FILES['file']['name'];
   $file_loc = $_FILES['file']['tmp_name'];
 	$file_size = $_FILES['file']['size'];
 	$file_type = $_FILES['file']['type'];
