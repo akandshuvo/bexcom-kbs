@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2016 at 05:15 PM
+-- Generation Time: May 12, 2016 at 05:28 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -55,7 +55,7 @@ CREATE TABLE `archive` (
   `type` varchar(256) NOT NULL,
   `size` varchar(256) NOT NULL,
   `location` varchar(256) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `root` varchar(16) NOT NULL,
   `sub_root` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -65,14 +65,17 @@ CREATE TABLE `archive` (
 --
 
 INSERT INTO `archive` (`id`, `file`, `type`, `size`, `location`, `date`, `root`, `sub_root`) VALUES
-(21, '[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent-81589', 'application/x-bittorrent', '3.103515625', '../../docs/retailer_location/', '2016-05-12 16:25:54', '', ''),
-(50, '-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 20:52:05', 'dth', 'product'),
-(51, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 20:57:20', 'dth', 'product'),
-(52, '[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent-20882', 'application/x-bittorrent', '3.103515625', '../../docs/dth/services/', '2016-05-12 21:05:01', 'dth', 'services'),
-(53, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 21:05:15', 'dth', 'product'),
-(54, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 21:07:09', 'dth', 'product'),
-(55, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 21:07:28', 'dth', 'product'),
-(56, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/services/', '2016-05-12 21:07:53', 'dth', 'services');
+(21, '[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent-81589', 'application/x-bittorrent', '3.103515625', '../../docs/retailer_location/', '2016-05-12 10:25:54', '', ''),
+(50, '-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 14:52:05', 'dth', 'product'),
+(51, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 14:57:20', 'dth', 'product'),
+(52, '[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent-20882', 'application/x-bittorrent', '3.103515625', '../../docs/dth/services/', '2016-05-12 15:05:01', 'dth', 'services'),
+(53, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 15:05:15', 'dth', 'product'),
+(54, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 15:07:09', 'dth', 'product'),
+(55, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/product/', '2016-05-12 15:07:28', 'dth', 'product'),
+(56, '05.12.16-[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent', 'application/x-bittorrent', '3.103515625', '../../docs/dth/services/', '2016-05-12 15:07:53', 'dth', 'services'),
+(57, '17-20-54-bexcom.sql', 'application/octet-stream', '8.2880859375', '../../docs/dth/product/', '2016-05-12 15:20:54', 'dth', 'product'),
+(58, '17-21-03-bexcom.sql', 'application/octet-stream', '8.2880859375', '../../docs/dth/product/', '2016-05-12 15:21:03', 'dth', 'product'),
+(59, '05.12.16-bexcom.sql', 'application/octet-stream', '8.2880859375', '../../docs/dth/services/', '2016-05-12 15:23:12', 'dth', 'services');
 
 -- --------------------------------------------------------
 
@@ -100,7 +103,7 @@ CREATE TABLE `notice` (
   `id` int(11) NOT NULL,
   `title` varchar(256) NOT NULL,
   `description` longtext NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -131,19 +134,10 @@ CREATE TABLE `upload_location` (
   `type` varchar(252) NOT NULL,
   `size` varchar(252) NOT NULL,
   `location` varchar(252) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `root` varchar(64) NOT NULL,
   `sub_root` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `upload_location`
---
-
-INSERT INTO `upload_location` (`id`, `file`, `type`, `size`, `location`, `date`, `root`, `sub_root`) VALUES
-(9, '[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent-47887', 'application/x-bittorrent', '3.103515625', '../../docs/dth/offer/', '2016-05-12 17:22:36', 'dth', 'offer'),
-(10, '[kat.cr]blindspot.s01e21.hdtv.x264.lol.ettv.torrent-89112', 'application/x-bittorrent', '3.103515625', '../../docs/dth/why_real_vu/', '2016-05-12 17:22:41', 'dth', 'why_real_vu'),
-(11, 'daily-task-list-protected.xlsx-71882', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', '12.5283203125', '../../docs/package/packs_1&2/', '2016-05-12 17:50:59', 'package', 'packs_1&2');
 
 -- --------------------------------------------------------
 
@@ -226,7 +220,7 @@ ALTER TABLE `after_sale_service_location`
 -- AUTO_INCREMENT for table `archive`
 --
 ALTER TABLE `archive`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT for table `notice`
 --
@@ -241,7 +235,7 @@ ALTER TABLE `retailer_location`
 -- AUTO_INCREMENT for table `upload_location`
 --
 ALTER TABLE `upload_location`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `user`
 --

@@ -157,6 +157,12 @@ if(!isset($_SESSION['admin_id'])){
     </div>
 
 
+    <!--:::::::::::::SCRIPTS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <script src="../scripts/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="../scripts/dropdown.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.js"></script>
+    <script src='../scripts/dialog-polyfill.min.js'></script>
+    <script src="../vendor/mdl/material.js"></script>
 
 
 
